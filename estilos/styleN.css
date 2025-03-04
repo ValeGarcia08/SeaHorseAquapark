@@ -88,6 +88,12 @@ body{
     .imagenes-info{
         width: 225px;
     }
+    #top_info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 8px;
+    }
     .flechas{
         width: 50px;
         cursor: pointer;
