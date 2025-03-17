@@ -13,6 +13,10 @@ const infoEcosistemas = {
     ]
 };
 
+/* el objeto recibira la informacion que deseas poner, solo ponla en el boton correcto
+
+*/
+
 const infoTitulo = document.getElementById("titulo_Info")
 const imagenInfo = document.getElementById("imagen-info")
 const infoDescripcion = document.getElementById("parrafo_Info")
