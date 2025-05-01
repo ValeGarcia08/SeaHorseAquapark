@@ -1,372 +1,235 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f9fb;
+    background: url('imagenes/fongo8l.jpg') no-repeat center center/cover;
+    color: #333;
+    line-height: 1.6;
+    color: #315482;
+  }
+  
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 0;
+    font-family: "Lora", serif;
     
-    
-}
-body {
-   font-family: Arial, sans-serif;
-   background: url('Imagenes/fongo8l.jpg') no-repeat center center/cover;
-}
-body p {
-    font-family: "DM Serif Display", serif;
-    font-size: 18px;
-}
-body h2{
-    font-family: "Handlee", cursive;
-   
-}
-/*Barra de Navegacion*/
-
-.hero {
-    position: relative;
-    margin-top: 20px;
-    width: 100%;
-    height: 50vh;
-    background-image: url('https://www.minambiente.gov.co/wp-content/uploads/2021/07/Boletin_MADS_10_NOV_2020.jpeg');
+  }
+  
+  .header {
+    background: linear-gradient(135deg, #315482, #00b4d8);
+    background-image: url('Playas/Playa\ San\ Luis-\ Bar\ de\ Kella.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     color: white;
-    border-bottom-right-radius: 120px; 
-    overflow: hidden;
-}
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #315482c5;
-}
-.text-overlay {
-    position: relative;
-    margin-top: 12%;
-    right: 2%;
-    width: 40%;
-    text-align: justify;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    border-radius: 10px;
-}
-.nav {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.logo{
-    border-radius: 12px;
-    width: 250px;
-    height: 215px;
-    margin-left: 15%;
-    margin-top: 5%;
-    background-color: rgba(255, 255, 255, 0);
-    box-shadow: 0 0 5px white;
-    transition: transform 0.3s ease;
-}
-
-.logo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
-
-h2{
-    font-family: "Handlee", cursive;
-    font-weight: bold;
     text-align: center;
-    margin-top: 5%;
-    margin-bottom: 10px;
+    padding: 3rem 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  
+  .descripcion-header {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  .introduccion {
+    margin-bottom: 3rem;
+  }
+  
+  .introduccion h2 {
+    font-size: 2rem;
     color: #315482;
-}
-.custom-hr {
+    margin-bottom: 1rem;
+  }
+  
+  .introduccion p {
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .ecosistemas h2 {
+    font-size: 2rem;
+    color: #315482;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .grid-ecosistemas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .card h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #315482;
+    margin: 1rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 1rem 1.5rem;
+    text-align: justify;
+  }
+  
+  .footer {
+    background-color: #315482;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .modal.active {
+    display: flex;
+  }
+  
+  .modal-content {
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+  
+  .modal-content h2 {
+    color: white;
+    font-family: "Lora", serif;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .modal-images {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .modal-images img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+  }  
+  .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+  }
+ .info-section h2{
+    align-items: center;
+ }
+  .info-card {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+  }
+
+  .info-card h2{
+    color: #315482;
+    text-align: center;
+  }
+
+  .info-card strong {
+    color: #315482;
+  }
+  .custom-hr {
     border: none;
     height: 5px; 
     background: #315482; 
     width: 80%; 
+    margin-bottom: 16px;
     
 }
+  .galleryESPC {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
 
-/* informacion Biosfera SeaFlower*/
-
-.container {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
-.image-box {
-    width: 450px;
-    height: 300px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px #50b1b3;
-    
-}
-.text-content {
-    text-align: justify;
-    color: gray;
-    text-justify: inter-word;
-}
-.title {
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    font-family: "Handlee", cursive;
-}
-
-/*Caracteristicas Y objetivos Biosfera seaflawer*/
-
-.info-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.info-card {
+  .cardESPC img {
     width: 100%;
-    max-width: 650px;
-    height: 300px;
-    border-radius: 10px;
-    text-align: justify;
-    position: relative;
-    overflow: hidden;
-}
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
 
-.info-content {
-    color: black;
-    padding: 20px;
-    position: absolute;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-   
-}
-.info-content strong{
-    color: #315482;
-}
-
-
-.info-content p {
-    font-size: 17px;
-   
-}
-
-/*Contenedores Ecosistemas Individuales*/
-
-.nuestro h2{
-    font-family: "Handlee", cursive;
-    font-size: 50px;
-}
-.containerEcosystem{
-    /*box-shadow: 4px 4px 8px 4px #50b1b3;*/
-    border-radius: 50px;
-    margin: 20px auto; 
+  .cardESPC p {
     text-align: center;
-    align-items: center;
-    width: 80%;
-    max-width: 150%; 
-}
-.containerEcosystem h2{
-    color: black;
-}
-.containerEcosystem p{
-    color: black;
-}
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
 
-.containerEcosystem1{
-    background-color: #2e507700;
-    padding: 20px;
-    border-radius: 50px;
-    margin: 20px auto; 
-    text-align: center;
-    align-items: center;
-    width: 80%;
-    max-width: 900px;  
-}
 
-.titulo{
-    color: white;
-   
-}
-.parrafos{
-    color: white;
-    font-size: 25px;
-}
-.Ecosystem {
-    align-items: center;
-    text-align: center;
-    .Section{
-        margin: 10px;
-        width: 100%;
+  @media screen and (max-width: 600px) {
+    .info-section {
+      flex-direction: column;
+      padding: 1rem;
     }
-}
 
-.containerArre {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, auto);
-    gap: 10px;
-    max-width: 900px;
-    margin: 0 auto;
-    
-}
-.containerArre img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-.cardArre{
-    background: rgba(255, 255, 255, 0.486);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    text-align: center;
-}
-
-
-.Ind {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(12, 2fr);
-    grid-template-rows: repeat(4, auto);
-    gap: 5px;
-    max-width: 150%; 
-    margin: 20px;
-}
-
-.Ind img {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-}
-
-
-
-.fondo {
-    background-image: url(Imagenes/Fondo6.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 50px;
-}
-.fondo2 {
-    background-image: url(Imagenes/FondoRosa.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 50px;
-}
-.fondo3 {
-    background-image: url(Imagenes/FondoAzul.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 50px;
-}
-
-
-/*Galeria*/
-.galleryESPC {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 6 columnas */
-    justify-content: center;
-    gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-}
-.cardESPC {
-    background: white;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    text-align: center;
-}
-.cardESPC img {
-    width: 100%;
-    height: auto;
-}
-.cardESPC p {
-    padding: 5px;
-    font-size: 14px;
-    margin: 0;
-}
-.cardESPC.large { width: 250px; }
-
-.protegidas{
-    text-align: center;
-    font-size: 20px;
-    color: gray;
-}
-
-.wrapper {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-}
-.container3 {
-    background: white;
-    width: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    text-align: center;
-}
-.titulo2 {
-    padding-top: 10%;
-    font-size: 35px;
-    color: white;
-}
-.gallery2 {
-    align-items: center;
-    display: grid;
-    padding: 20px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 20px;
-}
-.gallery2 img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-
-@media only screen and (max-width: 768px) {
-    .containerEcosystem {
-        width: 95%; 
-        margin-left: auto; 
-        margin-right: auto;
-        padding: 10px; 
+    .galleryESPC {
+      padding: 1rem;
     }
-    .Ecosystem {
-        margin: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-        .Section{
-            margin: 0px;
-            border: 4px solid;
-        }
-    }
-        
-}
-
+  }
